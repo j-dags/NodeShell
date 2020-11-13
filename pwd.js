@@ -1,6 +1,6 @@
-module.exports = function () {
+module.exports = function (done) {
+  // process.stdout.write(process.cwd());
+  // process.stdout.write("\nprompt > ");
 
-process.stdout.write(process.cwd());
-process.stdout.write("\nprompt > ");
-
-}
+  done(process.cwd());
+};
