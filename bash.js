@@ -11,4 +11,15 @@ const ls = require('./ls')
 // });
 
 process.stdout.write("prompt > ");
-pwd();
+
+process.stdin.on("data", (data) => {
+  const prompt = data.toString().trim();
+  process.stdout.write('\nYou typed: ' + prompt);
+  if (prompt === 'pwd') {
+    pwd();
+  } else if (prompt === 'ls') {
+    
+    ls();
+  }
+});
+
